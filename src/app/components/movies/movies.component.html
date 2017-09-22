@@ -1,0 +1,60 @@
+<div *ngIf="searchRes" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel.title">Search Results</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row" >
+      <div *ngFor="let movie of searchRes; let i = index" class="col-md-2">
+        <div *ngIf="i < 18" >
+          <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.releasedate}}</p>
+          <a class="btn btn-default" routerLink="/movie/{{movie.id}}">View Details>></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel.title">Popular Movies</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div *ngFor="let movie of popularLists; let i = index" class="col-md-2">
+        <div *ngIf="i < 6">
+          <img *ngIf="movie.poster_path" src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.releasedate}}</p>
+          <a class="btn btn-default" routerLink="/movie/{{movie.id}}">View Details>></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel.title">Movies in Theaters</h3>
+  </div>
+  <div class="panel-body">
+    <div class="row" >
+      <div *ngFor="let movie of theatersLists; let i = index" class="col-md-2">
+        <div *ngIf="i < 18" >
+          <img *ngIf="movie.poster_path" class="thumbnail" src="http://image.tmdb.org/t/p/w185/{{movie.poster_path}}">
+          <h4>{{movie.title}}</h4>
+          <p>{{movie.releasedate}}</p>
+          <a class="btn btn-default" routerLink="/movie/{{movie.id}}">View Details>></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+</div>
